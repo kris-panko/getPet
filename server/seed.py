@@ -26,7 +26,12 @@ if __name__ == "__main__":
         # db.create_all()
 
         print("Creating pets...")
-        pet1 = Pet(name="Bang Kitty", breed="American Shorthair", type="Cat", image=" ")
+        pet1 = Pet(
+            name="Bang Kitty",
+            breed="American Shorthair",
+            type="Cat",
+            image="https://static.boredpanda.com/blog/wp-content/uploads/2014/02/funny-wet-cats-coverimage.jpg ",
+        )
         pet2 = Pet(
             name="Stuart",
             breed="Annoyoying",
@@ -52,10 +57,10 @@ if __name__ == "__main__":
             image="https://as2.ftcdn.net/v2/jpg/02/15/27/05/1000_F_215270591_uQ86TM2a1jAaPPg6Yds4DlK9gH7zc2AM.jpg",
         )
         pet6 = Pet(
-            name="Whiskers",
-            breed="Siamese",
-            type="Cat",
-            image="https://as2.ftcdn.net/v2/jpg/02/15/27/05/1000_F_215270591_uQ86TM2a1jAaPPg6Yds4DlK9gH7zc2AM.jpg",
+            name="E.T.",
+            breed="We don't know",
+            type="Alien",
+            image="https://theentertainmentnut.files.wordpress.com/2012/06/et0.jpg",
         )
         pet7 = Pet(
             name="Sam",
@@ -152,7 +157,29 @@ if __name__ == "__main__":
             image="https://media.tenor.com/bwkZTI0fuukAAAAC/travis-scott-fish.gif",
         )
 
-        pets = [pet1, pet2, pet3, pet4]
+        pets = [
+            pet1,
+            pet2,
+            pet3,
+            pet4,
+            pet5,
+            pet6,
+            pet7,
+            pet8,
+            pet9,
+            pet10,
+            pet11,
+            pet10,
+            pet12,
+            pet13,
+            pet14,
+            pet15,
+            pet16,
+            pet17,
+            pet18,
+            pet19,
+            pet20,
+        ]
 
         print("Creating users...")
 
