@@ -1,20 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UserForm from "./UserForm";
 import { useNavigate } from "react-router-dom";
 import PetCard from "./PetCard";
 
-function Profile({ currUser, setCurrentUser, xurl, removeUser, postFavorites, removeFavorite }) {
+function Profile({ currUser, setCurrentUser, xurl, removeUser, postFavorites, removeFavorite, pets }) {
+    const navigate = useNavigate()
+    useEffect(() => {
+        if (currUser === '') {
+            navigate("/")
+        }
+    }, [currUser])
     const [showForm, setShowForm] = useState(false);
 
-    // const renderFavPets = currUser.favorites.map((fav) => {
-    //     return <PetCard key={fav.pet_id} pet={fav.pet} currUser={currUser} xurl={xurl} postFavorites={postFavorites} removeFavorite={removeFavorite} />
-    // })
+
+    const renderFavPets = currUser.favorites.map((fav) => {
+        const petHold = pets.filter((pet) => {
+            if (pet.id === fav.pet_id) {
+                return pet
+            }
+        })
+        return <PetCard key={fav.pet_id} pet={petHold[0]} currUser={currUser} xurl={xurl} postFavorites={postFavorites} removeFavorite={removeFavorite} />
+    })
 
     function handleClick() {
         setShowForm((showForm) => !showForm);
     }
 
-    const navigate = useNavigate()
 
     const handleProf = (updProf) => {
         console.log(updProf)
@@ -72,7 +83,7 @@ function Profile({ currUser, setCurrentUser, xurl, removeUser, postFavorites, re
 
             <div>
                 <ul className="cards">
-                    {/* {renderFavPets} */}
+                    {renderFavPets}
                 </ul>
 
             </div>

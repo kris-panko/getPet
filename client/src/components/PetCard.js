@@ -33,6 +33,10 @@ function PetCard({ xurl, pet, currUser, postFavorites, removeFavorite }) {
     useEffect(() => {
         if (currUser === "") { setEnableFav(false) } else { setEnableFav(true) }
     }, [currUser])
+
+    function handleAdoptClick(e) {
+        alert("Thanks for adopting a pet!");
+    }
     if (enableFav) {
         return (
             <li className="card">
@@ -43,7 +47,7 @@ function PetCard({ xurl, pet, currUser, postFavorites, removeFavorite }) {
                 {inFavorite ? (
                     <>
                         <button onClick={onClick} >💔</button>
-                        <button >Adopt</button>
+                        <button onClick={handleAdoptClick} >Adopt</button>
                     </>
                 ) : (
                     <>

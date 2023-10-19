@@ -16,6 +16,9 @@ function App() {
   const [favorites, setFavorites] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
 
+
+
+
   // useEffect(()=>{
   //   console.log(currUser)
   // },[currUser])
@@ -149,7 +152,7 @@ function App() {
           <Route path="/" element={<HomePage pets={pets} />} />
           <Route path="/pets" element={<PetPage pets={pets} currUser={currUser} xurl={xurl} postFavorites={postFavorites} removeFavorite={removeFavorite} />} />
           <Route path="/login" element={<Login users={users} currUser={currUser} loggedIn={loggedIn} setLogIn={setLogIn} setCurrentUser={setCurrentUser} xurl={xurl} addUser={addUser} />} />
-          <Route path="/profile" element={<Profile currUser={currUser} setCurrentUser={setCurrentUser} xurl={xurl} removeUser={removeUser} postFavorites={postFavorites} removeFavorite={removeFavorite} />} />
+          <Route path="/profile" element={<Profile pets={pets} currUser={currUser} setCurrentUser={setCurrentUser} xurl={xurl} removeUser={removeUser} postFavorites={postFavorites} removeFavorite={removeFavorite} />} />
         </Routes>
       </BrowserRouter>
     </div>
