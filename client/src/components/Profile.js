@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import UserForm from "./UserForm";
 import { useNavigate } from "react-router-dom";
+import PetCard from "./PetCard";
 
-function Profile({ currUser, setCurrentUser, xurl, removeUser }) {
+function Profile({ currUser, setCurrentUser, xurl, removeUser, postFavorites, removeFavorite }) {
     const [showForm, setShowForm] = useState(false);
+
+    // const renderFavPets = currUser.favorites.map((fav) => {
+    //     return <PetCard key={fav.pet_id} pet={fav.pet} currUser={currUser} xurl={xurl} postFavorites={postFavorites} removeFavorite={removeFavorite} />
+    // })
 
     function handleClick() {
         setShowForm((showForm) => !showForm);
@@ -48,7 +53,7 @@ function Profile({ currUser, setCurrentUser, xurl, removeUser }) {
 
     }
 
-    function handleSignout(e){
+    function handleSignout(e) {
         setCurrentUser("")
         navigate("/login")
     }
@@ -65,7 +70,14 @@ function Profile({ currUser, setCurrentUser, xurl, removeUser }) {
                 <button onClick={handleSignout} className="user-form-submit">Sign out</button>
             </div>
 
+            <div>
+                <ul className="cards">
+                    {/* {renderFavPets} */}
+                </ul>
+
+            </div>
         </>
+
 
     )
 }

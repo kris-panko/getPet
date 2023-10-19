@@ -5,6 +5,7 @@ import Login from "./Login";
 import PetPage from "./PetPage";
 import NavBar from "./NavBar"
 import Profile from "./Profile"
+import HomePage from "./HomePage"
 
 function App() {
   const xurl = "http://localhost:4000"
@@ -121,14 +122,14 @@ function App() {
       })
   }
 
-  function addUser(data){
-    setUsers([...users,data])
+  function addUser(data) {
+    setUsers([...users, data])
   }
-  function removeUser(data){
-    setUsers(users.filter((user)=>{if(user.id !== data.id)return user}))
+  function removeUser(data) {
+    setUsers(users.filter((user) => { if (user.id !== data.id) return user }))
   }
 
-function removeFavorite(data){
+  function removeFavorite(data) {
     setFavorites(favorites.filter((favorite) => favorite.id !== data))
     const updatedCurrUserFavs = currUser.favorites.filter(
       (favorite) => favorite.id !== data
@@ -136,19 +137,19 @@ function removeFavorite(data){
     setCurrUser({
       ...currUser,
       favorites: updatedCurrUserFavs,
-  })
-}
+    })
+  }
 
   return (
     <div className="app">
       <BrowserRouter>
         <Header />
-        <NavBar currUser={currUser}/>
+        <NavBar currUser={currUser} />
         <Routes>
-          <Route path="/" element={<></>}/>
-          <Route path="/pets" element={<PetPage pets={pets} currUser={currUser} xurl={xurl} postFavorites={postFavorites} removeFavorite={removeFavorite}/>}/>
-          <Route path="/login" element={<Login users={users} currUser={currUser} loggedIn={loggedIn} setLogIn={setLogIn} setCurrentUser={setCurrentUser} xurl={xurl} addUser={addUser}/>}/>
-          <Route path="/profile" element={<Profile currUser={currUser} setCurrentUser={setCurrentUser} xurl={xurl} removeUser={removeUser} />} />
+          <Route path="/" element={<HomePage pets={pets} />} />
+          <Route path="/pets" element={<PetPage pets={pets} currUser={currUser} xurl={xurl} postFavorites={postFavorites} removeFavorite={removeFavorite} />} />
+          <Route path="/login" element={<Login users={users} currUser={currUser} loggedIn={loggedIn} setLogIn={setLogIn} setCurrentUser={setCurrentUser} xurl={xurl} addUser={addUser} />} />
+          <Route path="/profile" element={<Profile currUser={currUser} setCurrentUser={setCurrentUser} xurl={xurl} removeUser={removeUser} postFavorites={postFavorites} removeFavorite={removeFavorite} />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -122,8 +122,8 @@ header h1 {
   color: #9e42b0;
 }
 
-.login-signup-div{
-  display:flex;
+.login-signup-div {
+  display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
@@ -235,7 +235,8 @@ header h1 {
   transition: box-shadow 0.3s;
   margin-bottom: 1rem;
   margin-left: 65px;
-  align-self: center; /* Centers the button horizontally */
+  align-self: center;
+  /* Centers the button horizontally */
 }
 
 .signup-toggle:hover,
@@ -243,8 +244,26 @@ header h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.buttonContainer{
+.buttonContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.home-page-header {
+  text-align: center;
+  color: #c258c4
+}
+
+.home-body {
+  text-align: center;
+
+}
+
+.home-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
 }
