@@ -23,6 +23,7 @@ return (
     <div className="user-form">
     <form onSubmit={handleSubmit} className="update-user-form">
         <h3>Update Profile</h3>
+        <label className="signup-label">Name:</label>
         <input
         type="text"
         name="name"
@@ -31,6 +32,7 @@ return (
         className="user-form-input"
         />
         <br />
+        <label className="signup-label">Username:</label>
         <input
         type="text"
         name="username"
@@ -39,6 +41,7 @@ return (
         className="user-form-input"
         />
         <br />
+        <label className="signup-label">Password:</label>
         <input
         type="text"
         name="password"

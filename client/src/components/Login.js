@@ -60,13 +60,21 @@ function Login({ users, currUser, loggedIn, setLogIn, setCurrentUser, xurl, addU
             body: JSON.stringify(searchUserHold),
         }).then((r) => {
             if (r.ok) {
+                r.json()
+                .then(d=>{
+                console.log(users)
+                const userIds = users.map((user)=>{return user.id})
                 const data = {
                     ...searchUserHold,
                     favorites: [],
                     adoptions: [],
+                    id: Math.max(...userIds) + 1,
                 };
                 addUser(data);
+                setCurrentUser(data)
                 navigate("/profile")
+                }
+            )
             }
         });
     }
@@ -149,8 +157,8 @@ function Login({ users, currUser, loggedIn, setLogIn, setCurrentUser, xurl, addU
         </div>
     )}else{
         return(
-        <div>
-            <button onClick={handleSignout}>Sign out</button>
+        <div className="buttonContainer">
+            <button onClick={handleSignout} className="user-form-submit">Sign out</button>
         </div>
         )
     }

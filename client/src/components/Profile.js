@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import UserForm from "./UserForm";
+import { useNavigate } from "react-router-dom";
 
-function Profile({ currUser, setCurrentUser, xurl }) {
+function Profile({ currUser, setCurrentUser, xurl, removeUser }) {
     const [showForm, setShowForm] = useState(false);
 
     function handleClick() {
         setShowForm((showForm) => !showForm);
     }
+
+    const navigate = useNavigate()
 
     const handleProf = (updProf) => {
         console.log(updProf)
@@ -36,14 +39,19 @@ function Profile({ currUser, setCurrentUser, xurl }) {
         })
             .then(r => {
                 if (r.ok) {
-                    setCurrentUser('')
+                    removeUser(currUser)
+                    setCurrentUser("")
+                    navigate("/login")
                 }
 
             })
 
     }
 
-
+    function handleSignout(e){
+        setCurrentUser("")
+        navigate("/login")
+    }
 
 
 
@@ -51,7 +59,10 @@ function Profile({ currUser, setCurrentUser, xurl }) {
         <>
             {showForm ? <UserForm handleProf={handleProf} currUser={currUser} deleteUsr={deleteUsr} /> : <> </>}
             <div className="buttonContainer">
-                <button onClick={handleClick}>User Settings</button>
+                <button onClick={handleClick} className="user-form-submit">User Settings</button>
+            </div>
+            <div className="buttonContainer">
+                <button onClick={handleSignout} className="user-form-submit">Sign out</button>
             </div>
 
         </>

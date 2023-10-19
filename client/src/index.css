@@ -242,3 +242,9 @@ header h1 {
 .login-toggle:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+.buttonContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

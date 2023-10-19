@@ -124,6 +124,9 @@ function App() {
   function addUser(data){
     setUsers([...users,data])
   }
+  function removeUser(data){
+    setUsers(users.filter((user)=>{if(user.id !== data.id)return user}))
+  }
 
 function removeFavorite(data){
     setFavorites(favorites.filter((favorite) => favorite.id !== data))
@@ -145,7 +148,7 @@ function removeFavorite(data){
           <Route path="/" element={<></>}/>
           <Route path="/pets" element={<PetPage pets={pets} currUser={currUser} xurl={xurl} postFavorites={postFavorites} removeFavorite={removeFavorite}/>}/>
           <Route path="/login" element={<Login users={users} currUser={currUser} loggedIn={loggedIn} setLogIn={setLogIn} setCurrentUser={setCurrentUser} xurl={xurl} addUser={addUser}/>}/>
-          <Route path="/profile" element={<Profile currUser={currUser} setCurrentUser={setCurrentUser} xurl={xurl} />} />
+          <Route path="/profile" element={<Profile currUser={currUser} setCurrentUser={setCurrentUser} xurl={xurl} removeUser={removeUser} />} />
         </Routes>
       </BrowserRouter>
     </div>
