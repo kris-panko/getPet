@@ -121,3 +121,103 @@ header h1 {
 .nav-link:hover {
   color: #9e42b0;
 }
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-label,
+.signup-label {
+  margin-bottom: 0.5rem;
+}
+
+.login-input,
+.signup-input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 15rem;
+  text-align: center;
+}
+
+.login-submit,
+.signup-submit {
+  padding: 0.5rem 2rem;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  margin-bottom: 1rem;
+}
+
+.login-submit:hover,
+.signup-submit:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: black;
+  margin: 0 1rem;
+  transition: box-shadow 0.3s;
+}
+
+.nav-link:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.user-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.update-user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-form-input {
+  margin-bottom: 10px;
+}
+
+.user-form-submit,
+.user-form-delete {
+  background-color: purple;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.user-form-submit:hover,
+.user-form-delete:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.signup-toggle {
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+}
