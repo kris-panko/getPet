@@ -13,14 +13,29 @@ function Profile({ currUser, setCurrentUser, xurl, removeUser, postFavorites, re
     const [showForm, setShowForm] = useState(false);
 
 
-    const renderFavPets = currUser.favorites.map((fav) => {
-        const petHold = pets.filter((pet) => {
-            if (pet.id === fav.pet_id) {
-                return pet
-            }
+
+    const renderFavPets = currUser.favorites !== undefined ?
+
+        currUser.favorites.map((fav) => {
+
+
+            const petHold = pets.filter((pet) => pet.id === fav.pet_id)
+            if (petHold.length > 0) {
+                return (<PetCard
+                    key={fav.pet_id}
+                    pet={petHold[0]}
+                    currUser={currUser}
+                    xurl={xurl}
+                    postFavorites={postFavorites}
+                    removeFavorite={removeFavorite} />)
+            } return null
         })
-        return <PetCard key={fav.pet_id} pet={petHold[0]} currUser={currUser} xurl={xurl} postFavorites={postFavorites} removeFavorite={removeFavorite} />
-    })
+        : null
+
+
+
+
+
 
     function handleClick() {
         setShowForm((showForm) => !showForm);

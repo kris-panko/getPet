@@ -35,7 +35,11 @@ function PetCard({ xurl, pet, currUser, postFavorites, removeFavorite }) {
     }, [currUser])
 
     function handleAdoptClick(e) {
-        alert("Thanks for adopting a pet!");
+        const data = {
+            user_id: currUser.id,
+            pet_id: id,
+        }
+        fetch(xurl + "/adoptions", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
     }
     if (enableFav) {
         return (
