@@ -19,15 +19,15 @@ function App() {
   //   console.log(currUser)
   // },[currUser])
 
-  useEffect(()=>{
-    fetch(`${xurl}/authorized`)
-    .then(r=>{
-      if(r.ok){
-        r.json()
-        .then(d=>setCurrentUser(d))
-      }
-    })
-  })
+  // useEffect(()=>{
+  //   fetch(`${xurl}/authorized`)
+  //   .then(r=>{
+  //     if(r.ok){
+  //       r.json()
+  //       .then(d=>setCurrentUser(d))
+  //     }
+  //   })
+  // })
 
   useEffect(() => {
     fetch(`${xurl}/pets`)

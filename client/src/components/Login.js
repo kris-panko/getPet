@@ -22,7 +22,6 @@ function Login({ users, currUser, loggedIn, setLogIn, setCurrentUser, xurl, addU
     }, []);
 
     function handleClick(e) {
-        console.log(users);
         setLoginMode(!loginMode);
     }
 
@@ -76,10 +75,10 @@ function Login({ users, currUser, loggedIn, setLogIn, setCurrentUser, xurl, addU
     }
     if(currUser === ""){
     return (
-        <div className="login-form">
+        <div className="login-signup-div">
             {loginMode ? (
                 <div>
-                    <button onClick={handleClick} className="signup-toggle">
+                    <button onClick={handleClick} className="login-toggle">
                         Don't have an account? Signup!
                     </button>
                     <form className="login-form" onSubmit={handleLoginSubmit}>
@@ -108,42 +107,44 @@ function Login({ users, currUser, loggedIn, setLogIn, setCurrentUser, xurl, addU
                     </form>
                 </div>
             ) : (
-                <form className="signup-form" onSubmit={handleSignupSubmit}>
-                    <div>
-                        <label className="signup-label">Name:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            className="signup-input"
-                            onChange={handleSignupChange}
-                        />
-                        <br></br>
-                        <label className="signup-label">Username:</label>
-                        <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            className="signup-input"
-                            onChange={handleSignupChange}
-                        />
-                        <br></br>
-                        <label className="signup-label">Password:</label>
-                        <input
-                            type="text"
-                            id="password"
-                            name="password"
-                            className="signup-input"
-                            onChange={handleSignupChange}
-                        />
-                    </div>
-                    <div>
-                        <input type="submit" className="signup-submit" />
-                    </div>
+                <div>
                     <button onClick={handleClick} className="signup-toggle">
                         Already have an account? Signin!
                     </button>
-                </form>
+                    <form className="signup-form" onSubmit={handleSignupSubmit}>
+                        <div>
+                            <label className="signup-label">Name:</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                className="signup-input"
+                                onChange={handleSignupChange}
+                            />
+                            <br></br>
+                            <label className="signup-label">Username:</label>
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                className="signup-input"
+                                onChange={handleSignupChange}
+                            />
+                            <br></br>
+                            <label className="signup-label">Password:</label>
+                            <input
+                                type="text"
+                                id="password"
+                                name="password"
+                                className="signup-input"
+                                onChange={handleSignupChange}
+                            />
+                        </div>
+                        <div>
+                            <input type="submit" className="signup-submit" />
+                        </div>
+                    </form>
+                </div>
             )}
         </div>
     )}else{

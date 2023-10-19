@@ -122,6 +122,14 @@ header h1 {
   color: #9e42b0;
 }
 
+.login-signup-div{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-form,
 .login-form {
   display: flex;
   flex-direction: column;
@@ -216,8 +224,21 @@ header h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-.signup-toggle {
-  margin-top: 10px;
-  display: block;
-  text-align: center;
+.signup-toggle,
+.login-toggle {
+  background-color: purple;
+  color: white;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  margin-bottom: 1rem;
+  margin-left: 65px;
+  align-self: center; /* Centers the button horizontally */
+}
+
+.signup-toggle:hover,
+.login-toggle:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
