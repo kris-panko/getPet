@@ -40,6 +40,7 @@ function PetCard({ xurl, pet, currUser, postFavorites, removeFavorite }) {
             pet_id: id,
         }
         fetch(xurl + "/adoptions", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+        alert("Congratulations! You have adopted a pet!");
     }
     if (enableFav) {
         return (
